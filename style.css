@@ -10,7 +10,7 @@ body {
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
 }
-.open-modal {
+.modal-btn {
   padding: 10px 30px;
   display: block;
   background-color: #009688;

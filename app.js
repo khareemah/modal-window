@@ -1,18 +1,21 @@
-const openModal = document.querySelector(".open-modal");
+const modalBtn = document.querySelector(".modal-btn");
 const modalContent = document.querySelector(".modal-content");
 const modal = document.querySelector(".modal");
-const closeModal = document.querySelector(".modal");
-openModal.addEventListener("click", function() {
-  openModalBox();
-});
-function openModalBox() {
-  modal.classList.toggle("open");
-}
-modal.addEventListener("click", function(e) {
-  if (e.target == "modal") {
-    openModalBox();
+const closeModalBtn = document.querySelector(".close-modal");
+
+modalBtn.addEventListener("click", openModal);
+
+modal.addEventListener("click", function (e) {
+  if (e.target.classList.contains("modal")) {
+    closeModal();
   }
 });
-closeModal.addEventListener("click", function() {
-  openModalBox();
-});
+closeModalBtn.addEventListener("click", closeModal);
+
+function openModal() {
+  modal.classList.add("open");
+}
+
+function closeModal() {
+  modal.classList.remove("open");
+}
